@@ -1,0 +1,13 @@
+{
+  "block.realmfantasymod.angband_cobble": "angband_cobble",
+  "block.realmfantasymod.angband_ore": "angband_ore",
+  "block.realmfantasymod.angband_stone": "angband_stone",
+  "block.realmfantasymod.deepslate_mithril_ore": "deepslate_mithril_ore",
+  "block.realmfantasymod.mithril_cobble": "mithril_cobble",
+  "block.realmfantasymod.mithril_ore": "mithril_ore",
+  "block.realmfantasymod.mithril_stone": "mithril_stone",
+  "block.realmfantasymod.mordor_cobble": "mordor_cobble",
+  "block.realmfantasymod.mordor_ore": "mordor_ore",
+  "block.realmfantasymod.mordor_stone": "mordor_stone",
+  "item.realmfantasymod.mithril_item": "mithril_item"
+}
