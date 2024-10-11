@@ -28,7 +28,9 @@ public class ItemTagProviderInit extends FabricTagProvider<Item> {
                 .addTag(TagList.Items.MITHRIL_LOGS);
         getOrCreateTagBuilder(ItemTags.LEAVES)
                 .add(BlockInit.IRONWOOD_LEAVES.asItem());
-
-
+        getOrCreateTagBuilder(ItemTags.LEAVES)
+                .add(BlockInit.EVILWOOD_LEAVES.asItem());
+        getOrCreateTagBuilder(ItemTags.LEAVES)
+                .add(BlockInit.BLUECRYSTAL_LEAVES.asItem());
     }
 }

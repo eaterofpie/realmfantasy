@@ -1,7 +1,7 @@
 package dev.andrew.realmfantasymod.init;
 
 import dev.andrew.realmfantasymod.RealmfantasyMod;
-import dev.andrew.realmfantasymod.worldgen.ConfiguredFeatureInit;
+import dev.andrew.realmfantasymod.world.ConfiguredFeatureInit;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+
 
 import java.util.Optional;
 
@@ -20,6 +21,8 @@ public class BlockInit {
     public static final Block MITHRIL_ORE =registerWithItem("mithril_ore",
             new Block(AbstractBlock.Settings.create().strength(1.5F, 6.0F).requiresTool().luminance(state -> 8)));
     public static final Block ANGBAND_ORE =registerWithItem("angband_ore",
+            new Block(AbstractBlock.Settings.create().strength(1.5F, 6.0F).requiresTool().luminance(state -> 8)));
+    public static final Block DWARF_STONE = registerWithItem("dwarf_stone",
             new Block(AbstractBlock.Settings.create().strength(1.5F, 6.0F).requiresTool().luminance(state -> 8)));
     public static final Block ANGBND_COBBLE =registerWithItem("angband_cobble",
             new Block(AbstractBlock.Settings.create().strength(1.5F, 6.0F).requiresTool().luminance(state -> 9)));
@@ -36,8 +39,35 @@ public class BlockInit {
     public static final Block MITHRIL_LOG = registerWithItem("mithril_log", Blocks.createLogBlock(MapColor.TERRACOTTA_LIGHT_BLUE, MapColor.WHITE));
     public static final Block SILVER_LOG = registerWithItem("silver_log", Blocks.createLogBlock(MapColor.GRAY, MapColor.STONE_GRAY));
     public static final Block IRONWOOD_LOG = registerWithItem("ironwood_log", Blocks.createLogBlock(MapColor.GRAY, MapColor.STONE_GRAY));
+    public static final Block EVILWOOD_LOG = registerWithItem("evilwood_log", Blocks.createLogBlock(MapColor.TERRACOTTA_LIGHT_BLUE, MapColor.WHITE));
+    public static final Block BLUECRYSTAL_LOG = registerWithItem("bluecrystal_log", Blocks.createLogBlock(MapColor.TERRACOTTA_LIGHT_BLUE, MapColor.WHITE));
     public static final LeavesBlock MITHRIL_LEAVES = registerWithItem("mithril_leaves",
-
+            new LeavesBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.PINK)
+                    .strength(0.2F)
+                    .ticksRandomly()
+                    .sounds(BlockSoundGroup.GRASS)
+                    .nonOpaque()
+                    .allowsSpawning(Blocks::canSpawnOnLeaves)
+                    .suffocates(Blocks::never)
+                    .blockVision(Blocks::never)
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY)
+                    .solidBlock(Blocks::never)));
+    public static final LeavesBlock BLUECRYSTAL_LEAVES = registerWithItem("bluecrystal_leaves",
+            new LeavesBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.PINK)
+                    .strength(0.2F)
+                    .ticksRandomly()
+                    .sounds(BlockSoundGroup.GRASS)
+                    .nonOpaque()
+                    .allowsSpawning(Blocks::canSpawnOnLeaves)
+                    .suffocates(Blocks::never)
+                    .blockVision(Blocks::never)
+                    .burnable()
+                    .pistonBehavior(PistonBehavior.DESTROY)
+                    .solidBlock(Blocks::never)));
+    public static final LeavesBlock EVILWOOD_LEAVES = registerWithItem("evilwood_leaves",
             new LeavesBlock(AbstractBlock.Settings.create()
                     .mapColor(MapColor.PINK)
                     .strength(0.2F)
@@ -81,7 +111,7 @@ public class BlockInit {
             new SaplingBlock(
                     new SaplingGenerator(
                             RealmfantasyMod.id("mithril_sapling").toString(),
-                            1.1F,
+                            0.1F,
                             Optional.empty(),
                             Optional.empty(),
                             Optional.of(ConfiguredFeatureInit.MITHRIL_TREE_KEY),
@@ -102,12 +132,36 @@ public class BlockInit {
                             .pistonBehavior(PistonBehavior.DESTROY)
                             .solidBlock(Blocks::never)
                             .noCollision()));
-
+    public static final SaplingBlock EVILWOOD_SAPLING = registerWithItem("evilwood_sapling",
+            new SaplingBlock(
+                    new SaplingGenerator(
+                            RealmfantasyMod.id("evilwood_sapling").toString(),
+                            0.6F,
+                            Optional.empty(),
+                            Optional.empty(),
+                            Optional.of(ConfiguredFeatureInit.EVILWOOD_TREE_KEY),
+                            Optional.empty(),
+                            Optional.empty(),
+                            Optional.empty()
+                    ),
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.DARK_GREEN)
+                            .ticksRandomly()
+                            .strength(0.0F)
+                            .sounds(BlockSoundGroup.GRASS)
+                            .nonOpaque()
+                            .allowsSpawning(Blocks::canSpawnOnLeaves)
+                            .suffocates(Blocks::never)
+                            .blockVision(Blocks::never)
+                            .burnable()
+                            .pistonBehavior(PistonBehavior.DESTROY)
+                            .solidBlock(Blocks::never)
+                            .noCollision()));
     public static final SaplingBlock SILVER_SAPLING = registerWithItem("silver_sapling",
             new SaplingBlock(
                     new SaplingGenerator(
                             RealmfantasyMod.id("silver_sapling").toString(),
-                            1.6F,
+                            0.6F,
                             Optional.empty(),
                             Optional.empty(),
                             Optional.of(ConfiguredFeatureInit.SILVER_TREE_KEY),
@@ -128,12 +182,11 @@ public class BlockInit {
                             .pistonBehavior(PistonBehavior.DESTROY)
                             .solidBlock(Blocks::never)
                             .noCollision()));
-
     public static final SaplingBlock IRONWOOD_SAPLING = registerWithItem("ironwood_sapling",
             new SaplingBlock(
                     new SaplingGenerator(
                             RealmfantasyMod.id("ironwood_sapling").toString(),
-                            1.2F,
+                            0.6F,
                             Optional.empty(),
                             Optional.empty(),
                             Optional.of(ConfiguredFeatureInit.IRONWOOD_TREE_KEY),
@@ -154,6 +207,32 @@ public class BlockInit {
                             .pistonBehavior(PistonBehavior.DESTROY)
                             .solidBlock(Blocks::never)
                             .noCollision()));
+    public static final SaplingBlock BLUECRYSTAL_SAPLING = registerWithItem("bluecrystal_sapling",
+            new SaplingBlock(
+                    new SaplingGenerator(
+                            RealmfantasyMod.id("bluecrystal_sapling").toString(),
+                            0.1F,
+                            Optional.empty(),
+                            Optional.empty(),
+                            Optional.of(ConfiguredFeatureInit.BLUECRYSTAL_TREE_KEY),
+                            Optional.empty(),
+                            Optional.empty(),
+                            Optional.empty()
+                    ),
+                    AbstractBlock.Settings.create()
+                            .mapColor(MapColor.DARK_GREEN)
+                            .ticksRandomly()
+                            .strength(0.0F)
+                            .sounds(BlockSoundGroup.GRASS)
+                            .nonOpaque()
+                            .allowsSpawning(Blocks::canSpawnOnLeaves)
+                            .suffocates(Blocks::never)
+                            .blockVision(Blocks::never)
+                            .burnable()
+                            .pistonBehavior(PistonBehavior.DESTROY)
+                            .solidBlock(Blocks::never)
+                            .noCollision()));
+
     public static  <T extends Block> T register(String name, T block ) {
         return Registry.register(Registries.BLOCK, RealmfantasyMod.id(name), block);
     }

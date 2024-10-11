@@ -27,6 +27,7 @@ public class BlockTagProviderInit  extends FabricTagProvider.BlockTagProvider {
                     .add(BlockInit.MORDOR_ORE)
                     .add(BlockInit.MORDOR_COBBLE)
                     .add(BlockInit.DEEPSLATE_MITHRIL_ORE)
+                    .add(BlockInit.DWARF_STONE)
                     .add(BlockInit.MORDOR_STONE);
 
             getOrCreateTagBuilder(BlockTags.SAPLINGS)
@@ -35,11 +36,15 @@ public class BlockTagProviderInit  extends FabricTagProvider.BlockTagProvider {
                     .add(BlockInit.SILVER_SAPLING);
             getOrCreateTagBuilder(BlockTags.LEAVES)
                     .add(BlockInit.SILVER_LEAVES)
+                    .add(BlockInit.BLUECRYSTAL_LEAVES)
                     .add(BlockInit.IRONWOOD_LEAVES)
+                    .add(BlockInit.EVILWOOD_LEAVES)
                     .add(BlockInit.MITHRIL_LEAVES);
             getOrCreateTagBuilder(BlockTags.LOGS)
                     .add(BlockInit.SILVER_LOG)
                     .add(BlockInit.IRONWOOD_LOG)
+                    .add(BlockInit.EVILWOOD_LOG)
+                    .add(BlockInit.BLUECRYSTAL_LOG)
                     .add(BlockInit.MITHRIL_LOG);
         }
 }

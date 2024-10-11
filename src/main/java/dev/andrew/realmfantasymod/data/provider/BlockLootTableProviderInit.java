@@ -21,6 +21,9 @@ public class BlockLootTableProviderInit extends FabricBlockLootTableProvider {
         addDrop(BlockInit.MORDOR_STONE);
         addDrop(BlockInit.ANGBND_COBBLE);
         addDrop(BlockInit.ANGBAND_ORE);
+        addDrop(BlockInit.DWARF_STONE);
+        addDrop(BlockInit.BLUECRYSTAL_LOG);
+        addDrop(BlockInit.BLUECRYSTAL_LEAVES);
         addDrop(BlockInit.DEEPSLATE_MITHRIL_ORE);
     }
 }

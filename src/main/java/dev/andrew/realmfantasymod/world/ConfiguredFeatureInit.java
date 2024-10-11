@@ -1,4 +1,4 @@
-package dev.andrew.realmfantasymod.worldgen;
+package dev.andrew.realmfantasymod.world;
 
 
 
@@ -19,6 +19,7 @@ import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.trunk.DarkOakTrunkPlacer;
+import net.minecraft.world.gen.trunk.LargeOakTrunkPlacer;
 
 import java.util.List;
 
@@ -31,10 +32,12 @@ public class ConfiguredFeatureInit {
     public static final RegistryKey<ConfiguredFeature<?, ?>> END_MORDOR_ORE_KEY = registerKey("end_mordor_ore");
 
 
-
     public static final RegistryKey<ConfiguredFeature<?, ?>> MITHRIL_TREE_KEY = registerKey("mithril_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> SILVER_TREE_KEY = registerKey("silver_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> IRONWOOD_TREE_KEY = registerKey("ironwood_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> EVILWOOD_TREE_KEY = registerKey("evilwood_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> BLUECRYSTAL_TREE_KEY = registerKey("bluecrystal_tree");
+
 
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
@@ -89,9 +92,25 @@ public class ConfiguredFeatureInit {
 
                 new TwoLayersFeatureSize(3, 0, 3) // limit, lowerSize, upperSize
         ).build());
+        register(context, EVILWOOD_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                SimpleBlockStateProvider.of(BlockInit.EVILWOOD_LOG), // log
+                new LargeOakTrunkPlacer(4, 4, 6), // baseHeight, firstRandomHeight, secondRandomHeight
+
+                SimpleBlockStateProvider.of(BlockInit.EVILWOOD_LEAVES), // leaves
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2), // radius, offset, height
+
+                new TwoLayersFeatureSize(3, 0, 3) // limit, lowerSize, upperSize
+        ).build());
+        register(context, BLUECRYSTAL_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                SimpleBlockStateProvider.of(BlockInit.BLUECRYSTAL_LOG), // log
+                new LargeOakTrunkPlacer(4, 4, 6), // baseHeight, firstRandomHeight, secondRandomHeight
+
+                SimpleBlockStateProvider.of(BlockInit.BLUECRYSTAL_LEAVES), // leaves
+                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 2), // radius, offset, height
+
+                new TwoLayersFeatureSize(3, 0, 3) // limit, lowerSize, upperSize
+        ).build());
     }
-
-
 
 
     private static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
@@ -104,4 +123,5 @@ public class ConfiguredFeatureInit {
                                                                                    FC featureConfig) {
         context.register(key, new ConfiguredFeature<>(feature, featureConfig));
     }
+
 }

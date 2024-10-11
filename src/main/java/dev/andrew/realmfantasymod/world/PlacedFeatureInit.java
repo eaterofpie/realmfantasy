@@ -1,4 +1,4 @@
-package dev.andrew.realmfantasymod.worldgen;
+package dev.andrew.realmfantasymod.world;
 
 import dev.andrew.realmfantasymod.RealmfantasyMod;
 import dev.andrew.realmfantasymod.init.BlockInit;
@@ -23,7 +23,9 @@ public class PlacedFeatureInit {
 
     public static final RegistryKey<PlacedFeature> MITHRIL_TREE_KEY = registerKey("mithril_tree");
     public static final RegistryKey<PlacedFeature> SILVER_TREE_KEY = registerKey("silver_tree");
+    public static final RegistryKey<PlacedFeature> EVILWOOD_TREE_KEY = registerKey("evilwood_tree");
     public static final RegistryKey<PlacedFeature> IRONWOOD_TREE_KEY = registerKey("ironwood_tree");
+    public static final RegistryKey<PlacedFeature> BLUECRYSTAL_TREE_KEY = registerKey("bluecrystal_tree");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         RegistryEntryLookup<ConfiguredFeature<?, ?>> registryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -41,21 +43,31 @@ public class PlacedFeatureInit {
                 Modifiers.modifiersCount(9,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(128))));
 
+
         register(context, MITHRIL_TREE_KEY, registryLookup.getOrThrow(ConfiguredFeatureInit.MITHRIL_TREE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        PlacedFeatures.createCountExtraModifier(1, 0.2f, 3),
+                        PlacedFeatures.createCountExtraModifier(8, 0.1f, 2),
                         BlockInit.MITHRIL_SAPLING));
-
 
         register(context, SILVER_TREE_KEY, registryLookup.getOrThrow(ConfiguredFeatureInit.SILVER_TREE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        PlacedFeatures.createCountExtraModifier(1, 0.2f, 3),
+                        PlacedFeatures.createCountExtraModifier(10, 0.1f, 2),
                         BlockInit.SILVER_SAPLING));
 
         register(context, IRONWOOD_TREE_KEY, registryLookup.getOrThrow(ConfiguredFeatureInit.IRONWOOD_TREE_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
-                        PlacedFeatures.createCountExtraModifier(1, 0.2f, 3),
+                        PlacedFeatures.createCountExtraModifier(10, 0.1f, 2),
                         BlockInit.IRONWOOD_SAPLING));
+
+        register(context, EVILWOOD_TREE_KEY, registryLookup.getOrThrow(ConfiguredFeatureInit.EVILWOOD_TREE_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        PlacedFeatures.createCountExtraModifier(8, 0.1f, 2),
+                        BlockInit.IRONWOOD_SAPLING));
+
+        register(context, BLUECRYSTAL_TREE_KEY, registryLookup.getOrThrow(ConfiguredFeatureInit.BLUECRYSTAL_TREE_KEY),
+                VegetationPlacedFeatures.treeModifiersWithWouldSurvive(
+                        PlacedFeatures.createCountExtraModifier(13, 0.1f, 2),
+                        BlockInit.BLUECRYSTAL_SAPLING));
     }
 
     private static RegistryKey<PlacedFeature> registerKey(String name) {
@@ -82,4 +94,5 @@ public class PlacedFeatureInit {
             return modifiers(RarityFilterPlacementModifier.of(chance), heightModifier);
         }
     }
+
 }

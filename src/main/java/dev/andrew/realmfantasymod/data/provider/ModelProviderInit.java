@@ -25,6 +25,7 @@ public class ModelProviderInit extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.MORDOR_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.MORDOR_COBBLE);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.MORDOR_STONE);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.DWARF_STONE);
 
         blockStateModelGenerator.registerLog(BlockInit.MITHRIL_LOG)
                 .log(BlockInit.MITHRIL_LOG);
@@ -32,12 +33,19 @@ public class ModelProviderInit extends FabricModelProvider {
                 .log(BlockInit.SILVER_LOG);
         blockStateModelGenerator.registerLog(BlockInit.IRONWOOD_LOG)
                 .log(BlockInit.IRONWOOD_LOG);
+        blockStateModelGenerator.registerLog(BlockInit.EVILWOOD_LOG)
+                .log(BlockInit.EVILWOOD_LOG);
+        blockStateModelGenerator.registerLog(BlockInit.BLUECRYSTAL_LOG)
+                .log(BlockInit.BLUECRYSTAL_LOG);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.MITHRIL_LEAVES);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.IRONWOOD_LEAVES);
         blockStateModelGenerator.registerSimpleCubeAll(BlockInit.SILVER_LEAVES);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.EVILWOOD_LEAVES);
+        blockStateModelGenerator.registerSimpleCubeAll(BlockInit.BLUECRYSTAL_LEAVES);
         blockStateModelGenerator.registerTintableCross(BlockInit.MITHRIL_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(BlockInit.SILVER_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerTintableCross(BlockInit.IRONWOOD_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(BlockInit.EVILWOOD_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
     }
 
     @Override

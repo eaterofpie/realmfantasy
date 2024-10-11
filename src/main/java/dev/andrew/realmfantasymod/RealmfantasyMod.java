@@ -3,6 +3,10 @@ package dev.andrew.realmfantasymod;
 import dev.andrew.realmfantasymod.init.BlockInit;
 import dev.andrew.realmfantasymod.init.ItemGroupInit;
 import dev.andrew.realmfantasymod.init.ItemInit;
+import dev.andrew.realmfantasymod.world.BiomeModificationIni;
+import dev.andrew.realmfantasymod.world.biome.BiomeTagProviderInit;
+import dev.andrew.realmfantasymod.world.biome.BiomesInit;
+import dev.andrew.realmfantasymod.world.biome.OverworldRegionInit;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -16,6 +20,10 @@ public class RealmfantasyMod implements ModInitializer {
 		ItemInit.load();
 		BlockInit.load();
 		ItemGroupInit.load();
+		BiomesInit.load();
+		BiomeModificationIni.load();
+		BiomeTagProviderInit.load();
+
 
 		LOGGER.info("Fantasy!");
 	}

@@ -1,5 +1,5 @@
-// 1.21.1	2024-10-09T19:40:23.0116596	RealmfantasyMod/Tags for minecraft:block
-ec58aab64cc9f4fe7949430fe4d3a97c9a35c225 data\minecraft\tags\block\needs_iron_tool.json
+// 1.21.1	2024-10-10T22:07:36.4074762	RealmfantasyMod/Tags for minecraft:block
+5ca88d8ac8e79c8bab1009748e7dc0e329228ac2 data\minecraft\tags\block\needs_iron_tool.json
 20f260da666cdf305efda0787747e9263f0ff153 data\minecraft\tags\block\saplings.json
-f00a3f650760ede6967a34c2ab2fa9b4d3b50047 data\minecraft\tags\block\logs.json
-5b43d140573b77ca7ce1612afffc6152a1dca0c9 data\minecraft\tags\block\leaves.json
+bbf5aea9b0a306e3fd720e17c2e58a85767a05a6 data\minecraft\tags\block\logs.json
+42ece4fb0e01ce259d28e1d5eb5340cca670ce46 data\minecraft\tags\block\leaves.json
