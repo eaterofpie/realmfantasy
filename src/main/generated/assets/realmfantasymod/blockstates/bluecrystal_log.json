@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "realmfantasymod:block/bluecrystal_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "realmfantasymod:block/bluecrystal_log"
+    },
+    "axis=z": {
+      "model": "realmfantasymod:block/bluecrystal_log_horizontal",
+      "x": 90
+    }
+  }
+}
