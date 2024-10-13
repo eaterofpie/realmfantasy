@@ -1,4 +1,4 @@
-package dev.andrew.realmfantasymod.data.generator;
+package dev.andrew.realmfantasymod.data.provider;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;

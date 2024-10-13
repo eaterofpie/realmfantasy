@@ -14,5 +14,6 @@ public class TerrablenderAPIInit  implements TerraBlenderApi {
 
         SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, RealmfantasyMod.MOD_ID, MaterialRulesInit.makeRules());
     }
+
 }
 

@@ -60,7 +60,8 @@ public class BiomesInit {
     public static final RegistryKey<Biome> FOREST_GUNDAR = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(RealmfantasyMod.MOD_ID, "forest_gundar"));
     public static final RegistryKey<Biome> Gryphon_Mountains = RegistryKey.of(RegistryKeys.BIOME,Identifier.of(RealmfantasyMod.MOD_ID, "gryphon_mountains"));
     public static final RegistryKey<Biome> DWARF_LANDS = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(RealmfantasyMod.MOD_ID, "dwarf_lands"));
-
+    public static final RegistryKey<Biome> DWARF_KINGDOM = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(RealmfantasyMod.MOD_ID, "dwarf_kingdom"));
+    public static final RegistryKey<Biome> DWARF_MINES = RegistryKey.of(RegistryKeys.BIOME, Identifier.of(RealmfantasyMod.MOD_ID, "dwarf_mines"));
     private BiomesInit() {
     }
 
@@ -113,6 +114,8 @@ public class BiomesInit {
         biomeRegisterable.register(FOREST_GUNDAR, OverworldBiomeCreator.createNormalForest(placedFeatures, configuredCarvers, true,true, true));
         biomeRegisterable.register(Gryphon_Mountains, OverworldBiomeCreator.createJaggedPeaks(placedFeatures, configuredCarvers));
         biomeRegisterable.register(DWARF_LANDS, OverworldBiomeCreator.createJaggedPeaks(placedFeatures, configuredCarvers));
+        biomeRegisterable.register(DWARF_KINGDOM, OverworldBiomeCreator.createJaggedPeaks(placedFeatures, configuredCarvers));
+        biomeRegisterable.register(DWARF_MINES, OverworldBiomeCreator.createJaggedPeaks(placedFeatures, configuredCarvers));
 
     }
     private static Biome createExample() {

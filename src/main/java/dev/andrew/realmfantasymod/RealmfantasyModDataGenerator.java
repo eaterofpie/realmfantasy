@@ -1,6 +1,5 @@
 package dev.andrew.realmfantasymod;
 
-import dev.andrew.realmfantasymod.data.generator.WorldGeneratorInit;
 import dev.andrew.realmfantasymod.data.provider.*;
 import dev.andrew.realmfantasymod.world.ConfiguredFeatureInit;
 import dev.andrew.realmfantasymod.world.PlacedFeatureInit;
@@ -24,11 +23,14 @@ public class RealmfantasyModDataGenerator implements DataGeneratorEntrypoint {
 
 
 	}
+
 	@Override
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ConfiguredFeatureInit::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, PlacedFeatureInit::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.BIOME, BiomesInit::bootstrap);
 	}
-
 }
+
+
+
