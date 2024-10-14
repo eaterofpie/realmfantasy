@@ -1,9 +1,9 @@
-// 1.21.1	2024-10-12T20:38:55.5078694	RealmfantasyMod/Block Loot Tables
+// 1.21.1	2024-10-13T15:39:25.4661416	RealmfantasyMod/Block Loot Tables
 11d47329810f3874bd3e7d514baa6244ae740c17 data\realmfantasymod\loot_table\blocks\bluecrystal_leaves.json
 0693c69813aa390036da76658a049b1c9dbe24f1 data\realmfantasymod\loot_table\blocks\mithril_stone.json
 b75cd733507f4087644477e9e1543b5c60fa2b4a data\realmfantasymod\loot_table\blocks\mordor_stone.json
-ebbffffcb973e8bfe3512c3c76f76304b82e3496 data\realmfantasymod\loot_table\blocks\mordor_cobble.json
 131fb16e563adbb9bd8e75608c40943ff7d89321 data\realmfantasymod\loot_table\blocks\deepslate_mithril_ore.json
+ebbffffcb973e8bfe3512c3c76f76304b82e3496 data\realmfantasymod\loot_table\blocks\mordor_cobble.json
 135f11c825224067c1526fb4d4d7535095592876 data\realmfantasymod\loot_table\blocks\angband_ore.json
 27a7c7ecc5580c17aeffc1af689d87d9b051627f data\realmfantasymod\loot_table\blocks\dwarf_stone.json
 b30dc499bcc1260003d7d0b27346cd9356dbfffc data\realmfantasymod\loot_table\blocks\angband_cobble.json
